@@ -9,7 +9,7 @@ export function Faq() {
   const [open, setOpen] = React.useState<number | null>(0);
 
   return (
-    <section id="faq" className="px-5 py-20 md:px-10">
+    <section id="faq" className="scroll-mt-20 px-5 py-20 md:px-10">
       <div className="mb-10 max-w-xl">
         <span className="mb-4 inline-block font-mono text-xs uppercase tracking-wide text-primary">
           FAQ

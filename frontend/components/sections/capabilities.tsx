@@ -1,9 +1,9 @@
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { capabilities, type Capability } from "@/lib/data";
+import { capabilities, accentPalette, type Capability } from "@/lib/data";
 
 export function Capabilities() {
   return (
-    <section id="capabilities" className="px-5 py-20 md:px-10">
+    <section id="capabilities" className="scroll-mt-20 px-5 py-20 md:px-10">
       <div className="mb-12 max-w-xl">
         <span className="mb-4 inline-block font-mono text-xs uppercase tracking-wide text-primary">
           Why teams work with us
@@ -14,15 +14,21 @@ export function Capabilities() {
       </div>
 
       <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
-        {capabilities.map((c) => (
-          <CapabilityCard key={c.title} {...c} />
+        {capabilities.map((c, i) => (
+          <CapabilityCard key={c.title} {...c} accentHex={accentPalette[i % accentPalette.length].hex} />
         ))}
       </ul>
     </section>
   );
 }
 
-function CapabilityCard({ area, icon: Icon, title, description }: Capability) {
+function CapabilityCard({
+  area,
+  icon: Icon,
+  title,
+  description,
+  accentHex,
+}: Capability & { accentHex: string }) {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
       <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
@@ -36,7 +42,10 @@ function CapabilityCard({ area, icon: Icon, title, description }: Capability) {
         />
         <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-border bg-card p-6 shadow-sm md:p-6">
           <div className="relative flex flex-1 flex-col justify-between gap-3">
-            <div className="w-fit rounded-lg border-[0.75px] border-border bg-secondary p-2 text-primary">
+            <div
+              className="w-fit rounded-lg border-[0.75px] border-border p-2"
+              style={{ background: `${accentHex}1A`, color: accentHex }}
+            >
               <Icon className="h-4 w-4" />
             </div>
             <div className="space-y-2.5">
