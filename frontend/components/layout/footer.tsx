@@ -15,8 +15,8 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-            A small full-stack team building AI products in React Native,
-            Next.js and NestJS — five shipped, more in progress.
+            A small team building AI-powered products for the real world —
+            five shipped, more in progress.
           </p>
           <div className="mt-5 flex gap-2">
             {socials.map((s) => (
