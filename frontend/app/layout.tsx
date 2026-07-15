@@ -22,9 +22,9 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI47 Labs — full-stack AI product studio",
+  title: "AI47 Labs — AI-powered products, built to last",
   description:
-    "We build AI-powered mobile apps, web platforms and backends — React Native, Next.js, NestJS and Node.js — from first sketch to app store.",
+    "AI47 Labs designs and builds AI-powered mobile apps and web platforms — from first sketch to app store, for our own products and for clients.",
 };
 
 export default function RootLayout({
@@ -39,7 +39,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${mono.variable}`}
     >
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
         </ThemeProvider>
       </body>
