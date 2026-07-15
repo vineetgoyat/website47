@@ -3,37 +3,21 @@
 import * as React from "react";
 
 type SidebarContextValue = {
-  collapsed: boolean;
-  toggleCollapsed: () => void;
-  mobileOpen: boolean;
-  setMobileOpen: (open: boolean) => void;
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  toggle: () => void;
 };
 
 const SidebarContext = React.createContext<SidebarContextValue | null>(null);
 
-const STORAGE_KEY = "ai47-sidebar-collapsed";
-
 export function SidebarProvider({ children }: { children: React.ReactNode }) {
-  const [collapsed, setCollapsed] = React.useState(false);
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  // Closed by default everywhere — the hamburger button is the only way in,
+  // on desktop and mobile alike.
+  const [open, setOpen] = React.useState(false);
 
-  React.useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved) setCollapsed(saved === "1");
-  }, []);
+  const toggle = React.useCallback(() => setOpen((prev) => !prev), []);
 
-  const toggleCollapsed = React.useCallback(() => {
-    setCollapsed((prev) => {
-      const next = !prev;
-      window.localStorage.setItem(STORAGE_KEY, next ? "1" : "0");
-      return next;
-    });
-  }, []);
-
-  const value = React.useMemo(
-    () => ({ collapsed, toggleCollapsed, mobileOpen, setMobileOpen }),
-    [collapsed, toggleCollapsed, mobileOpen]
-  );
+  const value = React.useMemo(() => ({ open, setOpen, toggle }), [open, toggle]);
 
   return (
     <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>
