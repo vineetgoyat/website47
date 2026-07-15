@@ -1,22 +1,23 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Boxes,
   Github,
+  Heart,
   Instagram,
+  Layers,
   Linkedin,
   Rocket,
-  ServerCog,
   ShieldCheck,
   Smartphone,
+  Sparkles,
   Twitter,
   Youtube,
 } from "lucide-react";
 
 export const nav = [
   { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "Why us", href: "#capabilities" },
-  { label: "Stack", href: "#stack" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
@@ -28,6 +29,16 @@ export const socials = [
   { label: "Twitter / X", href: "https://twitter.com/ai47labs", icon: Twitter },
   { label: "YouTube", href: "https://www.youtube.com/@ai47labs", icon: Youtube },
   { label: "Instagram", href: "https://www.instagram.com/ai47labs", icon: Instagram },
+];
+
+// A small set of bolder accent colors used to give each card its own
+// personality instead of every card looking identical. Cycled through by index.
+export const accentPalette = [
+  { name: "coral", hex: "#E8604C" },
+  { name: "teal", hex: "#2F8F7A" },
+  { name: "indigo", hex: "#5B63D3" },
+  { name: "gold", hex: "#D9A441" },
+  { name: "rose", hex: "#C6577A" },
 ];
 
 export type Product = {
@@ -50,7 +61,7 @@ export const products: Product[] = [
   },
   {
     name: "Yoda LMS",
-    tag: "Web platform",
+    tag: "Learning platform",
     blurb:
       "Course creation, enrolment, deadlines and grading in one place. Started as an internal tool for a training partner, now runs cohorts for a few hundred learners at a time.",
     href: "https://appdev.yodalms.com/",
@@ -68,7 +79,7 @@ export const products: Product[] = [
   },
   {
     name: "Edu Assist",
-    tag: "Web platform",
+    tag: "Learning platform",
     blurb:
       "Lesson plans, test papers and class notes for teachers who'd rather spend Sunday afternoon on anything else. Built with a lot of feedback from actual tutors, not just a product spec.",
     href: "https://eduassist-website.vercel.app/",
@@ -95,51 +106,40 @@ export type Capability = {
 
 export const capabilities: Capability[] = [
   {
-    title: "Mobile, without the usual trade-offs",
+    title: "Mobile apps that feel native",
     description:
-      "React Native apps that actually feel native — we spend real time on startup time and animation jank, not just feature checklists.",
+      "We spend real time on startup speed and smooth animations, not just feature checklists — an app should feel good in the hand, not just work.",
     icon: Smartphone,
     area: "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
   },
   {
-    title: "Backends built to be read, not just run",
+    title: "Built to be maintained, not just shipped",
     description:
-      "NestJS and Node.js APIs with clear module boundaries, so the next engineer who opens the repo isn't guessing what talks to what.",
-    icon: ServerCog,
+      "Clear, well-organised systems under the hood, so the product is easy to extend a year from now, not just easy to demo today.",
+    icon: Layers,
     area: "md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
   },
   {
     title: "Web that shows up in search",
     description:
-      "Next.js for the marketing site and the parts that need to rank, React for the parts that need to feel like an app.",
-    icon: Boxes,
+      "Fast-loading, SEO-friendly sites for the parts of a product that need to rank, and rich, app-like experiences for the parts that need to feel alive.",
+    icon: Rocket,
     area: "md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
   },
   {
-    title: "Type-safe, end to end",
+    title: "Reliable, end to end",
     description:
-      "One language, TypeScript, from the mobile app down to the database layer — fewer surprises at 11pm before a release.",
+      "Careful, type-checked code from the app down to the database layer — fewer surprises at 11pm before a release.",
     icon: ShieldCheck,
     area: "md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
   },
   {
-    title: "Shipped, not just demoed",
+    title: "Genuinely shipped",
     description:
-      "CI/CD to the App Store, Play Store and cloud from day one, so 'it works on my machine' isn't part of our vocabulary.",
-    icon: Rocket,
+      "Every product on this page is live and being used right now, not sitting in a portfolio. We measure ourselves on what's actually in people's hands.",
+    icon: Sparkles,
     area: "md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
   },
-];
-
-export const stack = [
-  { name: "React Native", role: "Mobile apps", code: "RN" },
-  { name: "Next.js", role: "Web & SEO", code: "▲" },
-  { name: "Node.js", role: "Runtime", code: "JS" },
-  { name: "NestJS", role: "Backend architecture", code: "Ns" },
-  { name: "TypeScript", role: "Type safety, everywhere", code: "TS" },
-  { name: "PostgreSQL", role: "Relational data", code: "Pg" },
-  { name: "MongoDB", role: "Non-relational data", code: "Mo" },
-  { name: "AWS / GCP", role: "Cloud & CI/CD", code: "☁" },
 ];
 
 export const stats = [
@@ -152,15 +152,11 @@ export const stats = [
 export const faqs = [
   {
     q: "What does AI47 Labs actually build?",
-    a: "Mostly two things: our own product line (Persona Pilot, Yoda LMS, AI Tutor, Edu Assist, UPSC Evaluator) and full-stack builds for clients — mobile in React Native, web in Next.js, backend in NestJS and Node.js.",
+    a: "Mostly two things: our own product line (Persona Pilot, Yoda LMS, AI Tutor, Edu Assist, UPSC Evaluator) and full-stack builds for clients — mobile apps, web platforms and the backends behind them.",
   },
   {
     q: "How does a new build usually start?",
     a: "A short scoping call, then a discovery sprint where we nail down the data model and the riskiest screen first, before committing to a full timeline. We'd rather find the hard part in week one than week six.",
-  },
-  {
-    q: "Which databases do you use?",
-    a: "PostgreSQL when the data is relational and the queries matter, MongoDB when the shape of the data is looser. We pick per project rather than defaulting to one.",
   },
   {
     q: "Can an existing product be reskinned or white-labelled?",
@@ -168,11 +164,15 @@ export const faqs = [
   },
   {
     q: "Do you work with early-stage startups or only bigger teams?",
-    a: "Both. The stack scales down to a single-founder MVP just as well as it scales up to a multi-team rollout — it's the same TypeScript codebase either way.",
+    a: "Both. The same foundations scale down to a single-founder MVP just as well as they scale up to a multi-team rollout.",
   },
   {
     q: "Is there a trial before a full engagement?",
     a: "Most projects start with a paid discovery sprint (usually one to two weeks) so both sides can check the fit before signing up for the whole build.",
+  },
+  {
+    q: "How do I get in touch?",
+    a: "The form below reaches a real person, usually within a day. Or email us directly if you'd rather skip the form.",
   },
 ];
 
@@ -188,3 +188,20 @@ export const offices = [
 ];
 
 export const contactEmail = "contact@ai47labs.com";
+
+export const aboutContent = {
+  eyebrow: "About us",
+  heading: "A small team that would rather ship than talk about shipping.",
+  paragraphs: [
+    "AI47 Labs started as three people trying to fix problems they kept running into themselves — one of them was writing LinkedIn posts every Sunday night, so we built a tool for that. It grew from there.",
+    "We're still small on purpose. Everyone here writes code, talks to users, and sits in on the same calls — nothing gets lost in translation between the people building the product and the people who asked for it.",
+    "Two offices, both in the NCR, one team.",
+  ],
+  image:
+    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
+  values: [
+    { label: "Ship real things", icon: Rocket },
+    { label: "Care about the details", icon: Heart },
+    { label: "Build to last", icon: ShieldCheck },
+  ],
+};
