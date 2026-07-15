@@ -38,7 +38,7 @@ export function Contact() {
     } catch (err) {
       setStatus("error");
       setErrorMsg(
-        "Couldn't reach the API. Is the backend running on port 3001? (npm run start:dev in /backend)"
+        "Something went wrong sending that — please try again in a moment, or email us directly instead."
       );
     }
   }
