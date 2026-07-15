@@ -44,7 +44,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="px-5 py-20 md:px-10">
+    <section id="contact" className="scroll-mt-20 px-5 py-20 md:px-10">
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <span className="mb-4 inline-block font-mono text-xs uppercase tracking-wide text-primary">
