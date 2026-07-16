@@ -57,7 +57,7 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
             {nav.map((item) => {
               const isActive = activeHref === item.href;
               return (
-                
+                <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
@@ -82,7 +82,7 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
 
           <div className="flex flex-wrap gap-1.5">
             {socials.map((s) => (
-              
+              <a
                 key={s.label}
                 href={s.href}
                 target="_blank"
@@ -95,7 +95,7 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
             ))}
           </div>
 
-          
+          <a
             href="#contact"
             onClick={() => setOpen(false)}
             className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent px-3 py-2.5 text-[13.5px] font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"

@@ -22,7 +22,7 @@ export function Products() {
         {products.map((p, i) => {
           const accent = accentPalette[i % accentPalette.length];
           return (
-            
+            <a
               key={p.name}
               href={p.href}
               target="_blank"
