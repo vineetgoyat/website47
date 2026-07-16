@@ -222,12 +222,15 @@ export const aboutContent = {
 };
 
 export type BlogPost = {
+  slug: string;
   title: string;
   excerpt: string;
   image: string;
   tag: string;
   date: string;
   url: string;
+  readTime: string;
+  content: string[];
 };
 
 
@@ -235,6 +238,7 @@ export type BlogPost = {
 // live article on the main site rather than duplicating the content locally.
 export const blogPosts: BlogPost[] = [
   {
+    slug: "better-claude-responses-adding-context-to-prompts",
     title: "Better Claude Responses: Adding Context to Prompts",
     excerpt:
       "Discover the secret to better Claude responses: context. Learn how to craft prompts that provide necessary background, ensuring you receive relevant, insightful, and actionable outputs.",
@@ -243,8 +247,14 @@ export const blogPosts: BlogPost[] = [
     tag: "AI Prompts",
     date: "25 Jun 2025",
     url: "https://ai47labs.com/blogs/context-better-prompts/",
+    readTime: "5 min read",
+    content: [
+      "The strongest prompt improvements usually come from context, not clever wording. If the model knows who the output is for, what it's meant to do, and what it should avoid, the result gets noticeably more useful.",
+      "We found that concrete constraints beat vague instructions every time. A short role, a clear goal, and one or two formatting limits are enough to turn a generic answer into something much closer to production-ready.",
+    ],
   },
   {
+    slug: "top-ai-tools-elevating-print-media-marketing",
     title: "Top AI Tools: Elevating Print Media Marketing",
     excerpt:
       "Discover the top AI tools every print media marketer should know — design, content creation, and campaign management, to streamline workflows and maximize ROI.",
@@ -253,8 +263,14 @@ export const blogPosts: BlogPost[] = [
     tag: "Marketing",
     date: "24 Jun 2025",
     url: "https://ai47labs.com/blogs/top-ai-print/",
+    readTime: "6 min read",
+    content: [
+      "Print media still benefits from the same AI workflows people use in digital channels: faster concepting, tighter copy variants, and cleaner handoff between creative and production.",
+      "The value is less about replacing the design team and more about clearing the repetitive work that slows campaigns down. AI helps the team move from first draft to usable asset much faster.",
+    ],
   },
   {
+    slug: "crafting-engaging-chatbot-responses-a-prompt-engineering-guide",
     title: "Crafting Engaging Chatbot Responses: A Prompt Engineering Guide",
     excerpt:
       "Transform your chatbot interactions with this comprehensive guide to prompt engineering — craft prompts that elicit engaging, helpful responses.",
@@ -263,8 +279,14 @@ export const blogPosts: BlogPost[] = [
     tag: "AI Prompts",
     date: "16 Jun 2025",
     url: "https://ai47labs.com/blogs/chatbot-responses-guide/",
+    readTime: "7 min read",
+    content: [
+      "Chatbot quality depends on more than the underlying model. The structure of the prompt, the expected tone, and the fallback behavior all shape how trustworthy the bot feels in practice.",
+      "A prompt engineering guide should focus on giving the assistant boundaries: what to answer, when to refuse, and how much detail to include. Those guardrails make the conversation feel intentional instead of random.",
+    ],
   },
   {
+    slug: "leading-ai-tools-for-robotic-process-automation-rpa",
     title: "Leading AI Tools for Robotic Process Automation (RPA)",
     excerpt:
       "Explore the leading AI tools for RPA and learn how businesses can leverage them to unlock new levels of productivity and competitiveness.",
@@ -273,8 +295,14 @@ export const blogPosts: BlogPost[] = [
     tag: "Automation",
     date: "31 Jul 2023",
     url: "https://ai47labs.com/blogs/leading-ai-tools-for-robotic-process-automation-rpa/",
+    readTime: "5 min read",
+    content: [
+      "RPA is strongest when the task is repetitive, rules-based, and easy to verify. AI adds value when it can reduce the amount of manual decision-making before the workflow runs.",
+      "The practical win is usually orchestration: use AI to classify, extract, or draft, then let automation handle the boring repeatable steps downstream.",
+    ],
   },
   {
+    slug: "20-best-prompts-to-learn-digital-marketing-with-chatgpt",
     title: "20+ Best Prompts to Learn Digital Marketing with ChatGPT",
     excerpt:
       "Discover over 20 top prompts for mastering digital marketing with ChatGPT — SEO, content strategy, PPC, and more.",
@@ -283,8 +311,14 @@ export const blogPosts: BlogPost[] = [
     tag: "Marketing",
     date: "26 Aug 2023",
     url: "https://ai47labs.com/blogs/20-best-prompts-to-learn-digital-marketing-with-chatgpt/",
+    readTime: "8 min read",
+    content: [
+      "Learning marketing with AI works best when the prompts are tied to a real channel, campaign, or outcome. Otherwise the answers stay too abstract to be useful.",
+      "Good prompts ask for examples, tradeoffs, and next steps. That structure turns the model from a trivia machine into a practical learning partner.",
+    ],
   },
   {
+    slug: "unveiling-the-10-stages-of-ai-what-you-need-to-know-now",
     title: "Unveiling the 10 Stages of AI: What You Need to Know NOW!",
     excerpt:
       "Discover the evolution of Artificial Intelligence through the '10 Stages of AI' — the past, present, and future of AI technology.",
@@ -293,8 +327,14 @@ export const blogPosts: BlogPost[] = [
     tag: "AI Essentials",
     date: "19 Aug 2023",
     url: "https://ai47labs.com/blogs/unveiling-the-10-stages-of-ai-what-you-need-to-know-now/",
+    readTime: "6 min read",
+    content: [
+      "The 'stages of AI' framing is useful because it helps people separate hype from capability. It gives a simple way to talk about where a system is actually useful.",
+      "In practice, most products sit somewhere between narrow automation and assisted decision-making. That middle ground is where most of the real work is happening right now.",
+    ],
   },
   {
+    slug: "5-great-ideas-for-mobile-vr-app-development",
     title: "5 Great Ideas for Mobile VR App Development",
     excerpt:
       "Discover the top 5 ideas for creating captivating mobile VR apps — from education to storytelling, exploring the future of VR development.",
@@ -303,8 +343,14 @@ export const blogPosts: BlogPost[] = [
     tag: "Development",
     date: "23 Aug 2023",
     url: "https://ai47labs.com/blogs/5-great-ideas-for-mobile-vr-app-development/",
+    readTime: "5 min read",
+    content: [
+      "Mobile VR works best when the interaction is simple and the payoff is obvious. The ideas that survive usually focus on training, simulation, or highly visual storytelling.",
+      "The big constraint is comfort. If the app ignores motion, fatigue, or setup time, even a clever idea stops being usable after a few minutes.",
+    ],
   },
   {
+    slug: "10-must-have-ai-prompts-for-academic-productivity",
     title: "10 Must-Have AI Prompts for Academic Productivity",
     excerpt:
       "Enhance academic productivity with these 10 AI prompts — from research topic generation to grammar checks and citation management.",
@@ -313,8 +359,14 @@ export const blogPosts: BlogPost[] = [
     tag: "Productivity",
     date: "24 Aug 2023",
     url: "https://ai47labs.com/blogs/10-must-have-ai-prompts-for-academic-productivity/",
+    readTime: "4 min read",
+    content: [
+      "Academic prompts work best when they narrow the task instead of widening it. Students usually need help with structure, clarity, or revision before they need more ideas.",
+      "A prompt that asks for a summary, an outline, or a set of study questions is often more useful than one that simply asks for an answer.",
+    ],
   },
   {
+    slug: "the-power-of-ai-in-industrial-design-5-prompt-concepts",
     title: "The Power of AI in Industrial Design: 5 Prompt Concepts",
     excerpt:
       "Explore five key AI prompt concepts that empower industrial designers — generative design, material selection, and real-time trend analysis.",
@@ -323,6 +375,11 @@ export const blogPosts: BlogPost[] = [
     tag: "AI Prompts",
     date: "24 Aug 2023",
     url: "https://ai47labs.com/blogs/the-power-of-ai-in-industrial-design-5-prompt-concepts/",
+    readTime: "6 min read",
+    content: [
+      "Industrial design is a strong fit for AI because the work sits between visual exploration and structured constraints. Prompting helps move between those two modes quickly.",
+      "The best concepts come from combining aesthetic direction, material constraints, and production realities in the same prompt so the output stays grounded.",
+    ],
   },
 ];
 
