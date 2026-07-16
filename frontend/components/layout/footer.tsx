@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { nav, products, socials, offices } from "@/lib/data";
+import Image from "next/image";
+import { nav, products, socials, offices, siteLogo } from "@/lib/data";
 
 export function Footer() {
   return (
@@ -7,8 +8,8 @@ export function Footer() {
       <div className="grid gap-10 pb-10 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent font-mono text-sm font-bold text-primary-foreground">
-              47
+            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white p-1.5 shadow-sm ring-1 ring-black/5">
+              <Image src={siteLogo.square} alt="AI47Labs logo" fill sizes="36px" className="object-contain p-1" />
             </span>
             <span className="font-display text-[17px] font-bold">
               AI<span className="text-primary">47</span>Labs
