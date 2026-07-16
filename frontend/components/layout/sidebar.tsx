@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { nav, socials } from "@/lib/data";
+import { nav, socials, siteLogo } from "@/lib/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useSidebar } from "@/components/layout/sidebar-provider";
 
@@ -31,8 +32,8 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
         {/* Header */}
         <div className="flex items-center justify-between gap-2 px-5 pb-2 pt-5">
           <Link href="/#home" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent font-mono text-sm font-bold text-primary-foreground">
-              47
+            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white p-1.5 shadow-sm ring-1 ring-black/5">
+              <Image src={siteLogo.square} alt="AI47Labs logo" fill sizes="36px" className="object-contain p-1" />
             </span>
             <span className="whitespace-nowrap font-display text-[17px] font-bold">
               AI<span className="text-primary">47</span>Labs
