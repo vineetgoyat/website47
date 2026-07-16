@@ -15,7 +15,7 @@ function AppShellInner({ children }: { children: React.ReactNode }) {
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.35] [background-image:linear-gradient(hsl(var(--border))_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border))_1px,transparent_1px)] [background-size:44px_44px] [mask-image:radial-gradient(ellipse_70%_55%_at_65%_0%,black_10%,transparent_70%)]"
-    />
+      />
 
       <Sidebar activeHref={`#${active}`} />
 

@@ -20,7 +20,7 @@ export function Footer() {
           </p>
           <div className="mt-5 flex gap-2">
             {socials.map((s) => (
-              <a
+              
                 key={s.label}
                 href={s.href}
                 target="_blank"
@@ -56,7 +56,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             {products.map((p) => (
               <li key={p.name}>
-                <a
+                
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
