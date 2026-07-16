@@ -30,7 +30,7 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
       >
         {/* Header */}
         <div className="flex items-center justify-between gap-2 px-5 pb-2 pt-5">
-          <Link href="#home" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
+          <Link href="/#home" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent font-mono text-sm font-bold text-primary-foreground">
               47
             </span>
@@ -96,7 +96,7 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
           </div>
 
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setOpen(false)}
             className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent px-3 py-2.5 text-[13.5px] font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
