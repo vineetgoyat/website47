@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { aboutContent } from "@/lib/data";
+import { aboutContent, siteLogo } from "@/lib/data";
 
 export function About() {
   return (
@@ -15,8 +15,10 @@ export function About() {
               className="object-cover"
             />
           </div>
-          <div className="absolute -right-5 -top-5 hidden h-24 w-24 rounded-2xl border border-border bg-card shadow-lg sm:flex sm:items-center sm:justify-center">
-            <span className="font-display text-2xl font-bold text-primary">47</span>
+          <div className="absolute -right-5 -top-5 hidden h-24 w-24 items-center justify-center rounded-2xl border border-border bg-white p-4 shadow-lg sm:flex">
+            <span className="relative block h-full w-full">
+              <Image src={siteLogo.square} alt="AI47Labs logo" fill sizes="96px" className="object-contain" />
+            </span>
           </div>
         </div>
 
