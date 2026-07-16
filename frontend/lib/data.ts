@@ -13,6 +13,14 @@ import {
   Youtube,
 } from "lucide-react";
 
+// Real AI47Labs brand mark, pulled straight from ai47labs.com's own uploads —
+// used anywhere a site normally shows its logo: nav bar, footer, favicon, and
+// the social-share (Open Graph) preview image.
+export const siteLogo = {
+  full: "https://ai47labs.com/wp-content/uploads/2023/03/AI47Labs-logos_black.png",
+  square: "https://ai47labs.com/wp-content/uploads/2023/03/AI47Labs-logos_black-300x300.png",
+};
+
 export const nav = [
   { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
