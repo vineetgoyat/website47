@@ -22,7 +22,7 @@ export function Products() {
         {products.map((p, i) => {
           const accent = accentPalette[i % accentPalette.length];
           return (
-            <a
+            
               key={p.name}
               href={p.href}
               target="_blank"
@@ -43,6 +43,19 @@ export function Products() {
                   style={{ background: `${accent.hex}CC`, color: "white" }}
                 >
                   {p.tag}
+                </span>
+
+                {/* Real product logo badge, pulled from the product's own site */}
+                <span className="absolute bottom-3 right-3 flex h-12 w-12 items-center justify-center rounded-xl bg-white/95 p-1.5 shadow-md ring-1 ring-black/5">
+                  <span className="relative block h-full w-full">
+                    <Image
+                      src={p.logo}
+                      alt={`${p.name} logo`}
+                      fill
+                      sizes="40px"
+                      className="object-contain"
+                    />
+                  </span>
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-5">

@@ -23,12 +23,12 @@ export function Topbar({ activeLabel }: { activeLabel: string }) {
         </p>
       </div>
       <div className="flex items-center gap-2">
-        <a href="#about">
+        <a href="/#about">
           <Button variant="outline" size="sm">
             About us
           </Button>
         </a>
-        <a href="#contact">
+        <a href="/#contact">
           <Button size="sm">Get started</Button>
         </a>
       </div>

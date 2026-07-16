@@ -24,12 +24,12 @@ export function Hero() {
             product line and for the teams we partner with.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact">
+            <a href="/#contact">
               <Button size="lg">
                 Get started <ArrowRight size={16} />
               </Button>
             </a>
-            <a href="#about">
+            <a href="/#about">
               <Button size="lg" variant="outline">
                 About us
               </Button>
