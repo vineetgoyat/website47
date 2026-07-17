@@ -12,6 +12,66 @@ talks to for one thing only — the contact form. Everything else on the site
 (copy, product cards, FAQs, blog links) is static content bundled at build
 time; there's no CMS and no database read path.
 
+```mermaid
+flowchart LR
+    subgraph Browser
+        A[Next.js app<br/>App Router, React 18]
+    end
+
+    subgraph "frontend/ (Vercel or any Node host)"
+        A --> B[Static sections<br/>Hero · About · Products<br/>Capabilities · Stats · Blog · FAQ]
+        A --> C["Contact form (client component)"]
+    end
+
+    subgraph "backend/ (NestJS API)"
+        D[ContactController<br/>POST /contact · GET /contact]
+        E[ContactService<br/>in-memory store]
+        D --> E
+    end
+
+    subgraph External
+        F[ai47labs.com<br/>real blog posts + logo assets]
+    end
+
+    C -- "fetch POST JSON" --> D
+    B -. "image src / href" .-> F
+```
+
+## 2. Frontend architecture (`frontend/`)
+
+**Stack:** Next.js 14 (App Router), TypeScript, Tailwind CSS, shadcn-style
+component conventions, `motion` for animation, `next-themes` for light/dark
+mode, `lucide-react` for icons.
+
+### 2.1 Folder layout and its purpose
+
+```
+frontend/
+├── app/
+│   ├── layout.tsx        Fonts, ThemeProvider, <head> metadata (title,
+│   │                     favicon, Open Graph/Twitter share image)
+│   ├── page.tsx          Assembles every homepage section in order
+│   └── globals.css       Tailwind base + shadcn CSS-variable theme tokens
+├── components/
+│   ├── ui/               shadcn primitives (button, glowing-effect, …).
+│   │                     Kept separate so `npx shadcn add` has a fixed
+│   │                     folder to write into.
+│   ├── layout/           Structural chrome, reused across the whole app:
+│   │                     app-shell, sidebar, sidebar-provider, topbar, footer
+│   └── sections/         One file per homepage section (hero, about,
+│                         products, capabilities, stats, blog, faq, contact)
+├── hooks/
+│   └── use-active-section.ts   IntersectionObserver-based scroll-spy,
+│                                drives which sidebar/topbar item is "active"
+├── lib/
+│   ├── utils.ts          cn() class-merging helper (shadcn standard)
+│   └── data.ts           Single source of truth: nav links, socials, accent
+│                         palette, products (incl. real logos), capabilities,
+│                         stats, FAQs, office addresses, about copy, real
+│                         blog post links, and the AI47Labs logo URLs
+└── next.config.mjs       Whitelists the external image hosts
+                          (images.unsplash.com, ai47labs.com)
+```
 
 ### 2.2 Rendering model
 
